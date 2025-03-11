@@ -3,12 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseManagementController;
 
-// Route::post('/create', [CourseManagementController::class, 'store']);
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/course', [CourseManagementController::class, 'index'])->name('course.index');
 Route::post('/store', [CourseManagementController::class, 'store'])->name('course.store');
 Route::get('/edit/{id}', [CourseManagementController::class, 'edit'])->name('course.edit');

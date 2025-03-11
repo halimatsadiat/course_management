@@ -24,7 +24,6 @@ class CourseManagementController extends Controller
     }
 
     public function store(CourseManagementRequest $request){
-    //    return $request->validated();
         try{
             $course = $this->courseManagementService->create($request->validated());
         }catch (Exception $ex){
@@ -58,5 +57,6 @@ class CourseManagementController extends Controller
             throw new Exception("Something went wrong in deleting course " . $ex->getMessage());
         }
         Session::flash('course_deleted', 'Course Deleted Successfully');
-        return redirect()->route('course.index');    }
+        return redirect()->route('course.index');    
+    }
 }
