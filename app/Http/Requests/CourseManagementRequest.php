@@ -19,11 +19,12 @@ class CourseManagementRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
+    
     public function rules(): array
     {
         return [
             'title' => 'required|string',
-            'description' => 'required|text',
+            'description' => 'required|string',
             'duration' => 'required|integer',
             'instructor' => 'required|string'
         ];
